@@ -1,11 +1,48 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "56aee4ee-4459-4796-bc31-f2b32bec5331",
+  "id": "17903ab9-4d67-4f85-8c08-a48c8c4a3b7a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "test": {
-      "name": "test",
+    "accounts": {
+      "name": "accounts",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int unsigned",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "int unsigned",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "accounts_id": {
+          "name": "accounts_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "users": {
+      "name": "users",
       "columns": {
         "id": {
           "name": "id",
@@ -25,8 +62,8 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "test_id": {
-          "name": "test_id",
+        "users_id": {
+          "name": "users_id",
           "columns": [
             "id"
           ]
